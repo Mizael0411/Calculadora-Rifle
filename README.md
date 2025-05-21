@@ -9,3 +9,5 @@ Foi pensada para que atraves de valores da velocidade e da distancia de um rifle
 
 ## 📸 Preview da interface
 
+![preview](calculadoraRifle.png)
+
