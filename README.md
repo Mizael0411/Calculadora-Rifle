@@ -11,3 +11,13 @@ Foi pensada para que atraves de valores da velocidade e da distancia de um rifle
 
 ![preview](calculadoraRifle.png)
 
+---
+
+## 🚀 Funcionalidades
+
+- ✅ Interface gráfica (Swing)
+- ✅ Validação de entrada
+- ✅ Calculo de lançamento
+- ✅ Erros tratados com mensagens
+
+---
