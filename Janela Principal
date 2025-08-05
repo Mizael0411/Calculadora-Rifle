@@ -1,0 +1,543 @@
+
+package com.mycompany.calculadoracampoeletrico;
+
+import java.awt.Dimension;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import javax.swing.JEditorPane;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+
+public class Janela1 extends JFrame {
+//declara as variaveis, que são as cargas e constantes;
+ private Calculadora c;
+ private int valorD;
+ private double q1;
+ private double q2;
+ private double q3;
+ private double q4;
+ private double E1, E2, E3, E4;
+    public Janela1() {
+        initComponents();
+
+
+        
+    }
+  
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jFrame1 = new javax.swing.JFrame();
+        panel1 = new java.awt.Panel();
+        Valorq1 = new javax.swing.JTextField();
+        labelq1 = new javax.swing.JLabel();
+        labelq2 = new javax.swing.JLabel();
+        Valorq2 = new javax.swing.JTextField();
+        Valorq3 = new javax.swing.JTextField();
+        labelq3 = new javax.swing.JLabel();
+        labelq4 = new javax.swing.JLabel();
+        Valorq4 = new javax.swing.JTextField();
+        valordistancia = new javax.swing.JSlider();
+        labelD = new javax.swing.JLabel();
+        distancia = new javax.swing.JTextField();
+        efetuarcalculo = new javax.swing.JButton();
+        resetarbutton = new javax.swing.JButton();
+        janelaPrincipal = new javax.swing.JPanel();
+        calculadora = new javax.swing.JLabel();
+        pergunta = new javax.swing.JButton();
+        calcular = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        jFrame1.setBackground(new java.awt.Color(255, 255, 255));
+
+        panel1.setForeground(new java.awt.Color(255, 255, 255));
+
+        Valorq1.setBackground(new java.awt.Color(204, 204, 204));
+        Valorq1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Valorq1.setForeground(new java.awt.Color(0, 0, 0));
+        Valorq1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Valorq1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Valorq1ActionPerformed(evt);
+            }
+        });
+
+        labelq1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        labelq1.setForeground(new java.awt.Color(0, 0, 0));
+        labelq1.setText("CARGA Q1");
+
+        labelq2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        labelq2.setForeground(new java.awt.Color(0, 0, 0));
+        labelq2.setText("CARGA Q2");
+
+        Valorq2.setBackground(new java.awt.Color(204, 204, 204));
+        Valorq2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Valorq2.setForeground(new java.awt.Color(0, 0, 0));
+        Valorq2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Valorq2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Valorq2ActionPerformed(evt);
+            }
+        });
+
+        Valorq3.setBackground(new java.awt.Color(204, 204, 204));
+        Valorq3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Valorq3.setForeground(new java.awt.Color(0, 0, 0));
+        Valorq3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Valorq3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Valorq3ActionPerformed(evt);
+            }
+        });
+
+        labelq3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        labelq3.setForeground(new java.awt.Color(0, 0, 0));
+        labelq3.setText("CARGA Q3");
+
+        labelq4.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        labelq4.setForeground(new java.awt.Color(0, 0, 0));
+        labelq4.setText("CARGA Q4");
+
+        Valorq4.setBackground(new java.awt.Color(204, 204, 204));
+        Valorq4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Valorq4.setForeground(new java.awt.Color(0, 0, 0));
+        Valorq4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Valorq4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Valorq4ActionPerformed(evt);
+            }
+        });
+
+        valordistancia.setBackground(new java.awt.Color(204, 204, 204));
+        valordistancia.setMinimum(1);
+        valordistancia.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        valordistancia.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                valordistanciaStateChanged(evt);
+            }
+        });
+
+        labelD.setBackground(new java.awt.Color(0, 0, 0));
+        labelD.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        labelD.setForeground(new java.awt.Color(0, 0, 0));
+        labelD.setText("Distancia D:");
+
+        distancia.setBackground(new java.awt.Color(209, 199, 199));
+        distancia.setForeground(new java.awt.Color(0, 0, 0));
+        distancia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                distanciaActionPerformed(evt);
+            }
+        });
+
+        efetuarcalculo.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
+        efetuarcalculo.setText("calcular");
+        efetuarcalculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                efetuarcalculoActionPerformed(evt);
+            }
+        });
+
+        resetarbutton.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 1, 24)); // NOI18N
+        resetarbutton.setText("RESETAR");
+        resetarbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetarbuttonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
+        panel1.setLayout(panel1Layout);
+        panel1Layout.setHorizontalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(efetuarcalculo, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addComponent(labelD, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(distancia, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(valordistancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50))
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelq1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelq2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelq3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelq4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(resetarbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Valorq1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Valorq2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Valorq3, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Valorq4, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+        panel1Layout.setVerticalGroup(
+            panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Valorq1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelq1))
+                .addGap(24, 24, 24)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Valorq2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelq2))
+                .addGap(24, 24, 24)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Valorq3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelq3))
+                .addGap(24, 24, 24)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Valorq4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelq4))
+                .addGap(37, 37, 37)
+                .addComponent(valordistancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(distancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelD)
+                    .addComponent(efetuarcalculo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(resetarbutton)
+                .addGap(32, 32, 32))
+        );
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        janelaPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+
+        calculadora.setBackground(new java.awt.Color(102, 102, 102));
+        calculadora.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        calculadora.setForeground(new java.awt.Color(0, 0, 0));
+        calculadora.setText("CALCULADORA  MÓDULO DO CAMPO ELÉTRICO ");
+
+        pergunta.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        pergunta.setText("como usar ?");
+        pergunta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                perguntaActionPerformed(evt);
+            }
+        });
+
+        calcular.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        calcular.setText("calculadora");
+        calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcularActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout janelaPrincipalLayout = new javax.swing.GroupLayout(janelaPrincipal);
+        janelaPrincipal.setLayout(janelaPrincipalLayout);
+        janelaPrincipalLayout.setHorizontalGroup(
+            janelaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(janelaPrincipalLayout.createSequentialGroup()
+                .addGap(109, 109, 109)
+                .addGroup(janelaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pergunta, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                    .addComponent(calcular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
+            .addGroup(janelaPrincipalLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(calculadora, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        janelaPrincipalLayout.setVerticalGroup(
+            janelaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(janelaPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(calculadora)
+                .addGap(67, 67, 67)
+                .addComponent(pergunta, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(calcular, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(122, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(janelaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(janelaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        pack();
+    }// </editor-fold>                        
+//abre uma janela explicando como funciona a calculadora, apos clicar no botao ajuda;
+    private void abrirAjudaTexto() {
+    try {
+        File txtFile = new File("C:\\Users\\Windows 10\\Documents\\NetBeansProjects\\CalculadoraCampoEletrico\\src\\main\\java\\com\\mycompany\\calculadoracampoeletrico\\funcionamento.txt");
+
+        if (!txtFile.exists()) {
+            JOptionPane.showMessageDialog(this, "Arquivo de ajuda não encontrado.");
+            return;
+        }
+
+        BufferedReader reader = new BufferedReader(new FileReader(txtFile));
+        JTextArea area = new JTextArea();
+        area.read(reader, null);
+        area.setEditable(false);
+        area.setLineWrap(true);
+        area.setWrapStyleWord(true);
+
+        JScrollPane scroll = new JScrollPane(area);
+        scroll.setPreferredSize(new Dimension(600, 500));
+
+        JFrame janelaAjuda = new JFrame("Como usar");
+        janelaAjuda.getContentPane().add(scroll);
+        janelaAjuda.pack();
+        janelaAjuda.setLocationRelativeTo(this);
+        janelaAjuda.setVisible(true);
+
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(this, "Erro ao abrir ajuda:\n" + e.getMessage());
+    }
+}
+    private void perguntaActionPerformed(java.awt.event.ActionEvent evt) {                                         
+   abrirAjudaTexto();
+
+    }                                        
+//botao usado para iniciar o calculo;
+    private void calcularActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        jFrame1.setSize(500, 400);
+        jFrame1.setLocationRelativeTo(null);
+        jFrame1.setVisible(true);
+
+
+    }                                        
+//lê as cargas dadas pelo usuario de q1 à q4, e lança uma janela caso o usuario tenha digitado um numero indevido 
+    private void Valorq1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        try {
+           
+            q1 = Double.parseDouble(Valorq1.getText());
+            if (Math.abs(q1) > 1e12){
+             javax.swing.JOptionPane.showMessageDialog(this, " Permitido apenas valores abaixo de 10^12 Um");   
+            }
+        } catch (NumberFormatException e) {
+           javax.swing.JOptionPane.showMessageDialog(this, "Distância deve ser maior que zero.");
+        }
+
+    }                                       
+
+    private void Valorq2ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+         try {
+           
+            q2 = Double.parseDouble(Valorq1.getText());
+            if (Math.abs(q2) > 1e12){
+             javax.swing.JOptionPane.showMessageDialog(this, " Permitido apenas valores abaixo de 10^12 Um");   
+            }
+        } catch (NumberFormatException e) {
+           javax.swing.JOptionPane.showMessageDialog(this, "Distância deve ser maior que zero.");
+        }
+
+    }                                       
+
+    private void Valorq3ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+         try {
+           
+            q3 = Double.parseDouble(Valorq1.getText());
+            if (Math.abs(q3) > 1e12){
+             javax.swing.JOptionPane.showMessageDialog(this, " Permitido apenas valores abaixo de 10^12 Um");   
+            }
+        } catch (NumberFormatException e) {
+           javax.swing.JOptionPane.showMessageDialog(this, "Distância deve ser maior que zero.");
+        }
+
+    }                                       
+
+    private void Valorq4ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        try {
+           
+            q4 = Double.parseDouble(Valorq1.getText());
+            if (Math.abs(q4) > 1e12){
+             javax.swing.JOptionPane.showMessageDialog(this, " Permitido apenas valores abaixo de 10^12 Um");   
+            }
+        } catch (NumberFormatException e) {
+           javax.swing.JOptionPane.showMessageDialog(this, "Distância deve ser maior que zero.");
+        }
+
+    }                                       
+// coleta o valor da distancia, e alerta os erros;
+    private void distanciaActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        String texto = distancia.getText().trim();
+
+        if (texto.isEmpty()) {
+            return; // nada digitado, não faz nada
+        }
+
+        try {
+            int valor = Integer.parseInt(texto);
+            if (valor <= 0) {
+                JOptionPane.showMessageDialog(this, "Distância deve ser maior que zero.");
+                return;
+            }
+
+            if (valor > 100) {
+                JOptionPane.showMessageDialog(this, "Permitido apenas valores abaixo de 100.");
+                return;
+            }
+
+            valordistancia.setValue(valor);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Digite um número válido para a distância.");
+        }
+
+    
+
+
+    }                                         
+
+    private void valordistanciaStateChanged(javax.swing.event.ChangeEvent evt) {                                            
+
+         valorD = valordistancia.getValue();
+        distancia.setText(String.valueOf(valorD));
+
+    }                                           
+//efetua o calculo, usando a logica presente na classe Calculadora, na qual armazena todos o processo de calculo;
+    private void efetuarcalculoActionPerformed(java.awt.event.ActionEvent evt) {                                               
+
+        try {
+            valorD = Integer.parseInt(distancia.getText().trim());
+
+            if (valorD <= 0) {
+                JOptionPane.showMessageDialog(this, "Distância deve ser maior que zero.");
+                return;
+            }
+
+            if (valorD > 100) {
+                JOptionPane.showMessageDialog(this, "Permitido apenas valores abaixo de 100.");
+                return;
+            }
+        
+        c  = new Calculadora(9e9, 1.6e-19,valorD);
+        
+        c.setCargas(q1, q2, q3, q4);
+
+        
+        q1 = Double.parseDouble(Valorq1.getText());
+        q2 = Double.parseDouble(Valorq2.getText());
+        q3 = Double.parseDouble(Valorq3.getText());
+        q4 = Double.parseDouble(Valorq4.getText());
+       c.setCargas(q1, q2, q3, q4);
+       c.CalcularModulo();
+            c.VerificarDirecao();
+            
+            double ex = c.getEx();
+            double ey = c.getEy();
+            double modulo = Math.sqrt(ex * ex + ey * ey);
+
+// Mostra o resultado em uma janela
+            String resultado = String.format("""
+                                             Resultado do Campo El\u00e9trico no ponto P:
+                                             Ex = %.2e N/C
+                                             Ey = %.2e N/C
+                                             M\u00f3dulo |E| = %.2e N/C""",
+                    ex, ey, modulo);
+
+            JOptionPane.showMessageDialog(this, resultado, "Resultado", JOptionPane.INFORMATION_MESSAGE);
+       
+  } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor, preencha todos os valores corretamente.");
+    }
+
+    }                                              
+//reseta os campos, para iniciar novos calculos;
+    private void resetarCampos() {
+        Valorq1.setText("");
+        Valorq2.setText("");
+        Valorq3.setText("");
+        Valorq4.setText("");
+        distancia.setText("");
+        valordistancia.setValue(1); // valor mínimo permitido
+
+        // Zera variáveis internas
+        q1 = 0;
+        q2 = 0;
+        q3 = 0;
+        q4 = 0;
+        valorD = 1;
+
+        // Zera o objeto calculadora (opcional)
+        c = null;
+    }
+//botao resetar;
+    private void resetarbuttonActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        resetarCampos();
+    }                                             
+
+
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        @Override
+        public void run() {
+            new Janela1().setVisible(true);
+        }
+    });
+}
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JTextField Valorq1;
+    private javax.swing.JTextField Valorq2;
+    private javax.swing.JTextField Valorq3;
+    private javax.swing.JTextField Valorq4;
+    private javax.swing.JLabel calculadora;
+    private javax.swing.JButton calcular;
+    private javax.swing.JTextField distancia;
+    private javax.swing.JButton efetuarcalculo;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JFrame jFrame1;
+    private javax.swing.JPanel janelaPrincipal;
+    private javax.swing.JLabel labelD;
+    private javax.swing.JLabel labelq1;
+    private javax.swing.JLabel labelq2;
+    private javax.swing.JLabel labelq3;
+    private javax.swing.JLabel labelq4;
+    private java.awt.Panel panel1;
+    private javax.swing.JButton pergunta;
+    private javax.swing.JButton resetarbutton;
+    private javax.swing.JSlider valordistancia;
+    // End of variables declaration                   
+}
